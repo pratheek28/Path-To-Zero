@@ -1,0 +1,34 @@
+{% extends 'baseTemplate.html' %}
+
+{% block message %}
+    <div class="centerText">
+      <h1>Create your Account!</h1>
+    </div>
+
+    <form action="/createAccount" method='POST'>
+
+      <div class="formDataEmailAndPass">
+        <input type="text" placeholder="First Name" id="firstname" name="firstname">
+        <input type="text" placeholder="Last Name" id="lastname" name="lastname">
+      </div>
+      <div class="formData">
+        <input type="text" placeholder="Email" id="email" name="email">
+      </div>
+
+      <div class="formData">
+        <input type="password" placeholder="Password" id="pwd" name="pwd">
+      </div>
+
+      <div class="formData">
+        <input type="password" placeholder="Re-enter Password" id="repwd" name="repwd">
+      </div>
+
+      <div class="formDataSubmit">
+        <input type="submit" value="Submit!" id="submit" name="submit">
+      </div>
+
+      <div class="centerText" style="color: {{ color }}">
+        {{ message }}
+      </div>
+    </form>
+{% endblock %}

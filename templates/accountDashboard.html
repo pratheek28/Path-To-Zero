@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emissions Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/2.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+        }
+        #myChart {
+            width: 400px;  /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var emissions = {{ emission | tojson }};
+            var dates = {{ time | tojson }};
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Emissions Over Time',
+                        data: emissions,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            },
+                            ticks: {
+                                color: 'white'  // Set the color of x-axis values
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Emissions'
+                            },
+                            ticks: {
+                                color: 'white'  // Set the color of y-axis values
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'right'  // Change this to 'top', 'left', 'right' as needed
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+  <div class="btnGroup">
+    <a href="/renderQuiz">
+      <button>Log today's data</button>
+    </a>
+  </div>
+
+  <div class="centerTextForDash">
+    <!-- Optional: Some centered text or elements can go here -->
+  </div>
+
+  <div id="curve_chart">
+      <canvas id="myChart"></canvas>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+.btnGroup {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    margin-top: 20px;
+    height: 100px;
+}
+
+.btnGroup a {
+    margin: 0 5px;
+}
+
+.next {
+    position: fixed;
+    bottom: 4.45%;
+    right: 4.7%;
+    padding: 10px 20px;
+
+}
+
+
+.formData {
+    margin-top: 1%;
+    margin-bottom: 20px;
+    margin-left: 45%;
+    margin-right: 70px;
+}
+
+.formDataEmailAndPass {
+    margin-left: 40%;
+}
+
+.formDataEmailAndPassForLogin {
+    margin-left: 40%;
+    margin-top: 2%;
+}
+
+.formDataSubmit {
+    margin-left: 48%;
+}
+
+.formDataSubmitForLogin {
+    margin-left: 48%;
+    margin-top: 10px;
+}
+
+
+.centerText {
+    color: white;
+    margin-bottom: 5px;
+    margin-left: 40%;
+    margin-top: -1%;
+}
+
+.centerTextForLogin {
+    color: white;
+    margin-bottom: 5px;
+    margin-left: 40%;
+    margin-top: 4%;
+}
+
+.centerTextForDash {
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 5px;
+    margin-left: 45%;
+}
+
+.centerTextMessage{
+    margin-top: 15px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: 45%;
+}
+
+.btnGroupQuiz {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 2px;
+    margin-top: 8%;
+    height: 100px;
+}
+
+.quizQuestions {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 8%;
+    height: 0.000000000001vh;
+}
+
+

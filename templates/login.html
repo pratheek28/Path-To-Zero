@@ -1,0 +1,27 @@
+{% extends 'baseTemplate.html' %}
+
+{% block message %}
+  <div class="centeredTextForLogin">
+    <form action="/logIntoAccount" method='POST'>
+
+      <div class="centerText">
+        <h1>Log in your Account!</h1>
+      </div>
+
+      <div class="formDataEmailAndPassForLogin">
+        <input type="text" placeholder="Email" id="email" name="email">
+        <input type="password" placeholder="Password" id="pwd" name="pwd">
+      </div>
+
+      <div class="formDataSubmitForLogin">
+        <input type="submit" value="Submit!" id="submit" name="submit">
+      </div>
+
+      <div class="centerTextMessage" style="{{ color }}">
+        {{ message }}
+      </div>
+
+    </form>
+  </div>
+
+{% endblock %}

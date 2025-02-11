@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carbon Foot Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/facts2.jpg') }}");
+            background-size: cover;  /* Make the background cover the entire screen */
+            background-position: center;  /* Center the background image */
+            margin: 0;
+            height: 100vh;  /* Ensure the body takes up the full viewport height */
+        }
+    </style>
+
+    <body>
+        <div class="btnGroup">
+            <a href="/" class="btnGroup">
+                <button>Home</button>
+            </a>
+            <a href="/renderMoreFacts" class="btnGroup">
+                <button>More Facts!</button>
+            </a>
+            <a href="/renderSignup" class="btnGroup">
+                <button>Signup!</button>
+            </a>
+            <a href="/renderLogin" class="btnGroup">
+                <button>Log In!</button>
+            </a>
+
+        </div>
+
+        <div class="next">
+            <a>
+
+            </a>
+        </div>
+    </body>
+
+</head>
+</html>
