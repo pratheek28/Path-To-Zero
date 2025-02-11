@@ -257,7 +257,8 @@ def LogIntoAccount():
 @app.route('/accountDashboard', methods=['GET', 'POST'])
 def accountDashboard():
     if not session.get("id"):
-        return redirect('/renderLogin')
+        # return redirect('/renderLogin')
+        return ("TEST!!")
     else:
         emissions = []
         date = []
