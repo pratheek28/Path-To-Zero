@@ -10,6 +10,7 @@ import time
 import mysql.connector
 import requests
 from flask_bcrypt import Bcrypt
+import os
 
 global high
 global hval
@@ -25,12 +26,17 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 bcrypt = Bcrypt(app)
 
+db_host = os.getenv('DB_HOST')
+db_user = os.getenv('DB_USER')
+db_password = os.getenv('DB_PASS')
+db_name = os.getenv('DB_NAME')
+
 mydb = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    passwd='Pratheek09!',
+    host=db_host,
+    user=db_user,
+    passwd=db_pasword,
     port='3306',
-    database='carbonfootprint'
+    database=db_name
 )
 
 mycursor = mydb.cursor()
