@@ -6,3 +6,4 @@ requests
 mysql-connector-python
 PyMySQL
 flask_bcrypt
+os
