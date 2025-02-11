@@ -5,7 +5,6 @@ import time
 from pyexpat.errors import messages
 from pprint import pprint
 from flask import Flask, render_template, request, redirect, session
-from flask_session import Session
 import time
 import mysql.connector
 import requests
@@ -22,8 +21,8 @@ app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=1)
 app.config["SESSION_TYPE"] = "filesystem"
+app.config['SECRET_KEY'] = "my_secret_key"
 
-Session(app)
 bcrypt = Bcrypt(app)
 
 db_host = os.getenv('DB_HOST')
