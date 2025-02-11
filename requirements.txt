@@ -4,5 +4,4 @@ gunicorn==20.1.0
 flask_session
 mysql-connector-python
 PyMySQL
-mysqlclient
 flask_bcrypt
