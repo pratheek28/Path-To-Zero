@@ -5,3 +5,5 @@ flask-session
 mysql-connector-python
 PyMySQL
 mysqlclient
+requests
+flask_bcrypt
