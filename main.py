@@ -2,7 +2,6 @@ from __future__ import print_function
 import datetime
 from datetime import timedelta, datetime
 import time
-import pytz
 from pyexpat.errors import messages
 import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
