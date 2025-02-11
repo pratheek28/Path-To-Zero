@@ -237,18 +237,22 @@ def LogIntoAccount():
     if (email == '' or password == ''):
         return render_template('login.html', message='Please enter all of the details!', color='red')
     else:
-        query = ('SELECT password FROM users WHERE email = (%s)')
-        mycursor.execute(query, (email,))
-        databasePWD = mycursor.fetchone()
-        if (not databasePWD):
-            return render_template('login.html', message='Email not found', color='red')
-        if bcrypt.check_password_hash(databasePWD[0], password):
-            session['id'] = email
-            print(session['id'])
-            return redirect('/accountDashboard')
-        else:
-            return render_template('login.html', message='Password is incorrect', color ='red')
+        try:
+            query = ('SELECT password FROM users WHERE email = (%s)')
+            mycursor.execute(query, (email,))
+            databasePWD = mycursor.fetchone()
+    
+            if (not databasePWD):
+                return render_template('login.html', message='Email not found', color='red')
 
+            if bcrypt.check_password_hash(databasePWD[0], password):
+                session['id'] = email
+                return redirect('/accountDashboard')
+            else:
+                return render_template('login.html', message='Password is incorrect', color='red')
+
+        except mysql.connector.Error as err:
+            return render_template('login.html', message=f"Database error: {err}", color='red')
 
 @app.route('/accountDashboard', methods=['GET', 'POST'])
 def accountDashboard():
