@@ -228,6 +228,18 @@ def createAccount():
                 id = count
             encryptedPassword = bcrypt.generate_password_hash(password).decode('utf-8')
             insertNewAccount(id, firstName, lastName, email, encryptedPassword)
+            configuration = sib_api_v3_sdk.Configuration()
+            configuration.api_key[
+                'api-key'] = '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'
+
+            api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
+            create_contact = sib_api_v3_sdk.CreateContact(email=email, list_ids=[2])
+
+            try:
+                api_response = api_instance.create_contact(create_contact)
+                pprint(api_response)
+            except ApiException as e:
+                print("Exception when calling ContactsApi->create_contact: %s\n" % e)
             return render_template('login.html', message='Success! Log in here.', color='green')
 
 
