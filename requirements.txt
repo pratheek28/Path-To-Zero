@@ -6,3 +6,5 @@ requests
 mysql-connector-python
 PyMySQL
 flask_bcrypt
+pytz
+sib_api_v3_sdk
