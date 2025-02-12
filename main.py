@@ -22,7 +22,7 @@ hval = 0
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=1)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 app.config["SESSION_TYPE"] = "filesystem"
 app.config['SECRET_KEY'] = "my_secret_key"
 
