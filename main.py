@@ -225,7 +225,7 @@ def createAccount():
             if count == 0:
                 id = id + 0
             else:
-                id = count
+                id = count + 1
                 print(count)
             encryptedPassword = bcrypt.generate_password_hash(password).decode('utf-8')
             insertNewAccount(id, firstName, lastName, email, encryptedPassword)
