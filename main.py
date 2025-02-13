@@ -226,7 +226,7 @@ def createAccount():
                 id = id + 0
             else:
                 id = count
-                return count
+                return print(count);
             encryptedPassword = bcrypt.generate_password_hash(password).decode('utf-8')
             insertNewAccount(id, firstName, lastName, email, encryptedPassword)
             configuration = sib_api_v3_sdk.Configuration()
