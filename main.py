@@ -158,6 +158,7 @@ def brevoPush():
     url = "https://api.brevo.com/v3/contacts/"+session['id']+"?identifierType=email_id"
 
     payload = { "attributes": {
+            "FIRSTNAME": session['firstName']
             "CAFO": currweektotal,
             "AVFO": othertotal,
             "FOCH":((currweektotal-prevweektotal)*100)/prevweektotal,
@@ -262,6 +263,10 @@ def LogIntoAccount():
 
             if bcrypt.check_password_hash(databasePWD[0], password):
                 session['id'] = email
+                query2 = ('SELECT firstName FROM users WHERE email = (%s)')
+                mycursor.execute(query2, (email,))
+                firstNameResult = mycursor.fetchone()
+                session['firstName'] = firstnameresult[0]
                 return redirect('/accountDashboard')
             else:
                 return render_template('login.html', message='Password is incorrect', color='red')
