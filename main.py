@@ -231,7 +231,7 @@ def createAccount():
             insertNewAccount(id, firstName, lastName, email, encryptedPassword)
             configuration = sib_api_v3_sdk.Configuration()
             configuration.api_key[
-                'api-key'] = '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'
+                'api-key'] = os.getenv('BREVO_API_KEY')
 
             api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
             create_contact = sib_api_v3_sdk.CreateContact(email=email, list_ids=[2])
