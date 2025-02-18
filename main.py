@@ -158,7 +158,7 @@ def brevoPush():
     url = "https://api.brevo.com/v3/contacts/"+session['id']+"?identifierType=email_id"
 
     payload = { "attributes": {
-            "FIRSTNAME": session['firstName']
+            "FIRSTNAME": session['firstName'],
             "CAFO": currweektotal,
             "AVFO": othertotal,
             "FOCH":((currweektotal-prevweektotal)*100)/prevweektotal,
