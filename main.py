@@ -167,7 +167,7 @@ def brevoPush():
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
-    "api-key":"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"
+    "api-key":os.getenv('BREVO_API_KEY')
     }
 
     response = requests.put(url, json=payload, headers=headers)
